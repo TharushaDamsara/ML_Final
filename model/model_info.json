@@ -1,0 +1,32 @@
+{
+  "model_name": "Gradient Boosting",
+  "features": [
+    "Administrative",
+    "Administrative_Duration",
+    "Informational",
+    "Informational_Duration",
+    "ProductRelated",
+    "ProductRelated_Duration",
+    "BounceRates",
+    "ExitRates",
+    "PageValues",
+    "SpecialDay",
+    "OperatingSystems",
+    "Browser",
+    "Region",
+    "Weekend",
+    "Month_Num",
+    "Visitor_New_Visitor",
+    "Visitor_Returning_Visitor",
+    "Total_Duration",
+    "Total_Pages",
+    "Engagement_Score",
+    "Avg_Time_Per_Page"
+  ],
+  "n_features": 21,
+  "accuracy": 0.8902,
+  "precision": 0.6239,
+  "recall": 0.7513,
+  "f1_score": 0.6817,
+  "auc_roc": 0.9339
+}
