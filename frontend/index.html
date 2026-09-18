@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purchase Predictor · Online Shoppers Intention</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">◆</span>
+        <div>
+          <p class="brand-name">Purchase Predictor</p>
+          <p class="brand-tagline">Online Shoppers Intention · ML Module Project</p>
+        </div>
+      </div>
+      <div class="status-indicator" aria-live="polite">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="status-text" class="status-text">Checking backend…</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Will this shopping session end in a purchase?</h1>
+      <p>
+        This tool uses a trained Gradient Boosting model to predict whether an online shopping
+        session will result in a purchase, based on the visitor's browsing behavior during that
+        session — page views, time spent, engagement signals, and session context.
+      </p>
+    </section>
+
+    <section id="form-section" class="card">
+      <h2>Session Details</h2>
+      <p class="section-intro">
+        Enter the details of a browsing session below. Fields marked
+        <span class="required" aria-hidden="true">*</span> are required.
+      </p>
+
+      <form id="prediction-form" novalidate>
+        <fieldset id="form-fieldset" class="form-fieldset">
+          <div id="form-groups"></div>
+
+          <div class="form-actions">
+            <button type="submit" id="submit-btn" class="btn btn-primary">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span class="btn-label">Predict Purchase Likelihood</span>
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="error-banner" class="error-banner hidden" role="alert">
+      <div class="error-banner-content">
+        <span class="error-icon" aria-hidden="true">⚠</span>
+        <p id="error-message"></p>
+      </div>
+      <button id="dismiss-error-btn" class="btn btn-text" type="button">Dismiss</button>
+    </section>
+
+    <section id="result-section" class="card result-card hidden">
+      <h2>Prediction Result</h2>
+
+      <div class="result-summary-row">
+        <span id="result-badge" class="result-badge"></span>
+        <p id="result-summary" class="result-summary-text"></p>
+      </div>
+
+      <div class="probability-block">
+        <div class="probability-row">
+          <span class="probability-label">Purchase probability</span>
+          <span id="purchase-probability-value" class="probability-value"></span>
+        </div>
+        <div class="probability-track">
+          <div id="purchase-bar" class="probability-fill probability-fill--positive"></div>
+        </div>
+
+        <div class="probability-row">
+          <span class="probability-label">No-purchase probability</span>
+          <span id="no-purchase-probability-value" class="probability-value"></span>
+        </div>
+        <div class="probability-track">
+          <div id="no-purchase-bar" class="probability-fill probability-fill--negative"></div>
+        </div>
+      </div>
+
+      <p class="result-model">Model used: <strong id="result-model"></strong></p>
+
+      <div class="form-actions">
+        <button id="reset-btn" class="btn btn-secondary" type="button">Make Another Prediction</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Machine Learning Module Group Project · Frontend built with HTML, CSS &amp; vanilla JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
